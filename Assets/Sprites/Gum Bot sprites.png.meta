@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d93c786e5fd39ac4ba67569334033ede
-timeCreated: 1496285560
+timeCreated: 1496424672
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -9,64 +9,64 @@ TextureImporter:
     21300004: Gum Bot sprites_2
     21300006: Gum Bot sprites_3
     21300008: Gum Bot sprites_4
-    21300010: Gum Bot sprites_5
+    21300010: Robo_Blue_Death_01
     21300012: Gum Bot sprites_6
     21300014: Gum Bot sprites_7
     21300016: Gum Bot sprites_8
     21300018: Gum Bot sprites_9
     21300020: Gum Bot sprites_10
-    21300022: Gum Bot sprites_11
-    21300024: Gum Bot sprites_12
-    21300026: Gum Bot sprites_13
-    21300028: Gum Bot sprites_14
-    21300030: Gum Bot sprites_15
-    21300032: Gum Bot sprites_16
-    21300034: Gum Bot sprites_17
-    21300036: Gum Bot sprites_18
-    21300038: Gum Bot sprites_19
-    21300040: Gum Bot sprites_20
-    21300042: Gum Bot sprites_21
-    21300044: Gum Bot sprites_22
-    21300046: Gum Bot sprites_23
-    21300048: Gum Bot sprites_24
-    21300050: Gum Bot sprites_25
-    21300052: Gum Bot sprites_26
+    21300022: Robo_Pink_Death_01
+    21300024: Robo_Blue_Move_01
+    21300026: Robo_Blue_Move_02
+    21300028: Robo_Blue_Move_03
+    21300030: Robo_Blue_Move_04
+    21300032: Robo_Blue_Move_05
+    21300034: Robo_Blue_Move_06
+    21300036: Robo_Pink_Move_01
+    21300038: Robo_Pink_Move_02
+    21300040: Robo_Pink_Move_03
+    21300042: Robo_Pink_Move_04
+    21300044: Robo_Pink_Move_05
+    21300046: Robo_Pink_Move_06
+    21300048: Robo_Blue_Idle_01
+    21300050: Robo_Blue_Idle_02
+    21300052: Robo_Blue_Idle_03
     21300054: Gum Bot sprites_27
-    21300056: Gum Bot sprites_28
-    21300058: Gum Bot sprites_29
-    21300060: Gum Bot sprites_30
+    21300056: Robo_Pink_Idle_01
+    21300058: Robo_Pink_Idle_02
+    21300060: Robo_Pink_Idle_03
     21300062: Gum Bot sprites_31
     21300064: Gum Bot sprites_32
     21300066: Gum Bot sprites_33
     21300068: Gum Bot sprites_34
     21300070: Gum Bot sprites_35
     21300072: Gum Bot sprites_36
-    21300074: Gum Bot sprites_37
+    21300074: Robo_Red_Death_01
     21300076: Gum Bot sprites_38
     21300078: Gum Bot sprites_39
     21300080: Gum Bot sprites_40
     21300082: Gum Bot sprites_41
     21300084: Gum Bot sprites_42
-    21300086: Gum Bot sprites_43
-    21300088: Gum Bot sprites_44
-    21300090: Gum Bot sprites_45
-    21300092: Gum Bot sprites_46
-    21300094: Gum Bot sprites_47
-    21300096: Gum Bot sprites_48
-    21300098: Gum Bot sprites_49
-    21300100: Gum Bot sprites_50
-    21300102: Gum Bot sprites_51
-    21300104: Gum Bot sprites_52
-    21300106: Gum Bot sprites_53
-    21300108: Gum Bot sprites_54
-    21300110: Gum Bot sprites_55
-    21300112: Gum Bot sprites_56
-    21300114: Gum Bot sprites_57
-    21300116: Gum Bot sprites_58
+    21300086: Robo_Green_Death_01
+    21300088: Robo_Red_Move_01
+    21300090: Robo_Red_Move_02
+    21300092: Robo_Red_Move_03
+    21300094: Robo_Red_Move_04
+    21300096: Robo_Red_Move_05
+    21300098: Robo_Red_Move_06
+    21300100: Robo_Green_Move_01
+    21300102: Robo_Green_Move_02
+    21300104: Robo_Green_Move_03
+    21300106: Robo_Green_Move_04
+    21300108: Robo_Green_Move_05
+    21300110: Robo_Green_Move_06
+    21300112: Robo_Red_Idle_01
+    21300114: Robo_Red_Idle_02
+    21300116: Robo_Red_Idle_03
     21300118: Gum Bot sprites_59
-    21300120: Gum Bot sprites_60
-    21300122: Gum Bot sprites_61
-    21300124: Gum Bot sprites_62
+    21300120: Robo_Green_Idle_01
+    21300122: Robo_Green_Idle_02
+    21300124: Robo_Green_Idle_03
     21300126: Gum Bot sprites_63
     21300128: Gum Bot sprites_64
     21300130: Gum Bot sprites_65
@@ -108,7 +108,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 35
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -119,7 +119,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -127,7 +127,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 256
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -135,7 +135,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 256
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -146,72 +146,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gum Bot sprites_0
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 199
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 199
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_2
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 199
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_3
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 199
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_4
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 199
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_5
+      name: Robo_Blue_Death_01
       rect:
         serializedVersion: 2
         x: 101
@@ -224,72 +159,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_6
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 199
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_7
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 199
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_8
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 199
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_9
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 199
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_10
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 199
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_11
+      name: Robo_Pink_Death_01
       rect:
         serializedVersion: 2
         x: 224
@@ -302,7 +172,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_12
+      name: Robo_Blue_Move_01
       rect:
         serializedVersion: 2
         x: 5
@@ -315,7 +185,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_13
+      name: Robo_Blue_Move_02
       rect:
         serializedVersion: 2
         x: 24
@@ -328,7 +198,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_14
+      name: Robo_Blue_Move_03
       rect:
         serializedVersion: 2
         x: 43
@@ -341,7 +211,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_15
+      name: Robo_Blue_Move_04
       rect:
         serializedVersion: 2
         x: 61
@@ -354,7 +224,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_16
+      name: Robo_Blue_Move_05
       rect:
         serializedVersion: 2
         x: 81
@@ -367,7 +237,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_17
+      name: Robo_Blue_Move_06
       rect:
         serializedVersion: 2
         x: 100
@@ -380,7 +250,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_18
+      name: Robo_Pink_Move_01
       rect:
         serializedVersion: 2
         x: 128
@@ -393,7 +263,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_19
+      name: Robo_Pink_Move_02
       rect:
         serializedVersion: 2
         x: 147
@@ -406,7 +276,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_20
+      name: Robo_Pink_Move_03
       rect:
         serializedVersion: 2
         x: 166
@@ -419,7 +289,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_21
+      name: Robo_Pink_Move_04
       rect:
         serializedVersion: 2
         x: 184
@@ -432,7 +302,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_22
+      name: Robo_Pink_Move_05
       rect:
         serializedVersion: 2
         x: 204
@@ -445,10 +315,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_23
+      name: Robo_Pink_Move_06
       rect:
         serializedVersion: 2
-        x: 223
+        x: 222
         y: 176
         width: 18
         height: 18
@@ -458,7 +328,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_24
+      name: Robo_Blue_Idle_01
       rect:
         serializedVersion: 2
         x: 6
@@ -471,7 +341,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_25
+      name: Robo_Blue_Idle_02
       rect:
         serializedVersion: 2
         x: 25
@@ -484,7 +354,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_26
+      name: Robo_Blue_Idle_03
       rect:
         serializedVersion: 2
         x: 44
@@ -497,20 +367,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_27
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 154
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_28
+      name: Robo_Pink_Idle_01
       rect:
         serializedVersion: 2
         x: 129
@@ -523,7 +380,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_29
+      name: Robo_Pink_Idle_02
       rect:
         serializedVersion: 2
         x: 148
@@ -536,7 +393,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_30
+      name: Robo_Pink_Idle_03
       rect:
         serializedVersion: 2
         x: 167
@@ -549,85 +406,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_31
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 154
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_32
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 125
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_33
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 125
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_34
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 125
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_35
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 125
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_36
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 125
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_37
+      name: Robo_Red_Death_01
       rect:
         serializedVersion: 2
         x: 101
@@ -640,72 +419,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_38
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 125
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_39
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 125
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_40
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 125
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_41
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 125
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_42
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 125
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_43
+      name: Robo_Green_Death_01
       rect:
         serializedVersion: 2
         x: 224
@@ -718,7 +432,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_44
+      name: Robo_Red_Move_01
       rect:
         serializedVersion: 2
         x: 5
@@ -731,7 +445,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_45
+      name: Robo_Red_Move_02
       rect:
         serializedVersion: 2
         x: 24
@@ -744,7 +458,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_46
+      name: Robo_Red_Move_03
       rect:
         serializedVersion: 2
         x: 43
@@ -757,7 +471,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_47
+      name: Robo_Red_Move_04
       rect:
         serializedVersion: 2
         x: 61
@@ -770,7 +484,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_48
+      name: Robo_Red_Move_05
       rect:
         serializedVersion: 2
         x: 81
@@ -783,7 +497,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_49
+      name: Robo_Red_Move_06
       rect:
         serializedVersion: 2
         x: 100
@@ -796,7 +510,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_50
+      name: Robo_Green_Move_01
       rect:
         serializedVersion: 2
         x: 128
@@ -809,7 +523,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_51
+      name: Robo_Green_Move_02
       rect:
         serializedVersion: 2
         x: 147
@@ -822,7 +536,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_52
+      name: Robo_Green_Move_03
       rect:
         serializedVersion: 2
         x: 166
@@ -835,7 +549,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_53
+      name: Robo_Green_Move_04
       rect:
         serializedVersion: 2
         x: 184
@@ -848,7 +562,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_54
+      name: Robo_Green_Move_05
       rect:
         serializedVersion: 2
         x: 204
@@ -861,7 +575,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_55
+      name: Robo_Green_Move_06
       rect:
         serializedVersion: 2
         x: 223
@@ -874,7 +588,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_56
+      name: Robo_Red_Idle_01
       rect:
         serializedVersion: 2
         x: 6
@@ -887,7 +601,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_57
+      name: Robo_Red_Idle_02
       rect:
         serializedVersion: 2
         x: 25
@@ -900,7 +614,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_58
+      name: Robo_Red_Idle_03
       rect:
         serializedVersion: 2
         x: 44
@@ -913,20 +627,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_59
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 80
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_60
+      name: Robo_Green_Idle_01
       rect:
         serializedVersion: 2
         x: 129
@@ -939,7 +640,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_61
+      name: Robo_Green_Idle_02
       rect:
         serializedVersion: 2
         x: 148
@@ -952,76 +653,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Gum Bot sprites_62
+      name: Robo_Green_Idle_03
       rect:
         serializedVersion: 2
         x: 167
         y: 80
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_63
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 80
-        width: 14
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_64
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 32
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_65
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 32
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_66
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 32
-        width: 16
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Gum Bot sprites_67
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 32
         width: 16
         height: 18
       alignment: 7

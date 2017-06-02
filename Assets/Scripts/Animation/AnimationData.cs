@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using UnityEngine;
 
+using System.Collections.Generic;
 using System.Linq;
 using System;
 #endregion
@@ -74,6 +75,21 @@ namespace RGS.Animation
 
 		[SerializeField]
 		private Data[] m_animations = null;
+		public Data[] animations
+		{
+			get
+			{
+				return m_animations;
+			}
+		}
+
+		public List<Data> animationsList
+		{
+			get
+			{
+				return m_animations.ToList();
+			}
+		}
 
 		[ContextMenu("Copy Data")]
 		private void Fill ()
@@ -84,7 +100,7 @@ namespace RGS.Animation
 		[ContextMenu("Paste Data")]
 		private void Transfer ()
 		{
-			m_animationController.animations = m_animations.ToList();
+			m_animationController.animations = animationsList;
 		}
 	}
 }

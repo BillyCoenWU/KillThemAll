@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class WaveManager : MonoBehaviour
 {
+	[SerializeField]
+	private Enemy.Data[] m_enemyDatas = null;
+
 	private static WaveManager s_instance = null;
 	public static WaveManager Instance
 	{

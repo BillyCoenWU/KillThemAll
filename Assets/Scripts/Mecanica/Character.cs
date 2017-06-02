@@ -11,6 +11,13 @@ public class Character : MonoBehaviour
 
 	[SerializeField]
 	private LifeManager m_lifeManager = null;
+	public LifeManager lifeManager
+	{
+		get
+		{
+			return m_lifeManager;
+		}
+	}
 
 	[SerializeField]
 	private Weapon m_weapon = null;
