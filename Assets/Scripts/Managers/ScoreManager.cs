@@ -26,7 +26,13 @@ public class ScoreManager : MonoBehaviour
 
 	private void Awake ()
 	{
+		if(s_instance != null)
+		{
+			DestroyImmediate(s_instance);
+		}
+
 		s_instance = this;
+
 		gameObject.SetActive(false);
 	}
 

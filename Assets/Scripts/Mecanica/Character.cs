@@ -2,6 +2,8 @@
 
 public class Character : MonoBehaviour
 {
+	private const string HORIZONTAL = "Horizontal";
+
 	private bool m_canJump = false;
 
 	private float m_axisX = 0.0f;
@@ -10,17 +12,10 @@ public class Character : MonoBehaviour
 	private readonly Vector2 JUMP_FORCE = new Vector2(0.0f, 8.0f);
 
 	[SerializeField]
-	private LifeManager m_lifeManager = null;
-	public LifeManager lifeManager
-	{
-		get
-		{
-			return m_lifeManager;
-		}
-	}
+	private AudioClip[] m_sounds = null;
 
 	[SerializeField]
-	private Weapon m_weapon = null;
+	private AudioSource m_audioSource = null;
 
 	[SerializeField]
 	private SpriteRendererAnimation m_animationController = null;
@@ -31,6 +26,16 @@ public class Character : MonoBehaviour
 			return m_animationController;
 		}
 	}
+
+	[SerializeField]
+	private LifeManager m_lifeManager = null;
+	public LifeManager lifeManager
+	{
+		get
+		{
+			return m_lifeManager;
+		}
+  	}
 
 	private Transform m_transform = null;
 	public new Transform transform
@@ -85,13 +90,20 @@ public class Character : MonoBehaviour
 
 	private void Awake ()
     {
+		if(s_instance != null)
+		{
+			DestroyImmediate(s_instance);
+		}
+
 		s_instance = this;
+
 		m_animationController.PlayByType(ANIMATION_TYPE.IDLE);
 	}
 
 	private void Start ()
 	{
 		m_lifeManager = new LifeManager(1);
+		m_lifeManager.Death += this.Death;
 		m_lifeManager.Death += GameManager.Instance.EndGame;
 	}
 	
@@ -108,6 +120,8 @@ public class Character : MonoBehaviour
 			{
 				PauseManager.Instance.Resume();
 			}
+
+			return;
 		}
 		else
 		{
@@ -118,11 +132,12 @@ public class Character : MonoBehaviour
 			}
 		}
 
-		m_axisX = Input.GetAxis("Horizontal");
+		m_axisX = Input.GetAxis(HORIZONTAL);
 
 		Flip();
 		Jump();
 		ChangeAnimation();
+		Weapon.Instance.WeaponUpdate();
 	}
 
 	private void FixedUpdate ()
@@ -152,6 +167,11 @@ public class Character : MonoBehaviour
 
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
+			m_audioSource.Stop();
+			m_audioSource.loop = false;
+			m_audioSource.clip = m_sounds[1];
+			m_audioSource.Play();
+
 			m_canJump = false;
 			rigidbody2D.velocity = Constantes.VECTOR_TWO;
 			rigidbody2D.AddForce(JUMP_FORCE, ForceMode2D.Impulse);
@@ -160,30 +180,36 @@ public class Character : MonoBehaviour
 		}
 	}
 
+	private void Death ()
+	{
+		m_audioSource.Stop();
+		m_audioSource.loop = false;
+		m_audioSource.clip = m_sounds[3];
+		m_audioSource.Play();
+	}
+
 	private void ChangeAnimation ()
 	{
 		if(m_animationController.currentAnimation.type == ANIMATION_TYPE.IDLE && m_axisX != 0.0f)
 		{
+			PlayAudioMove();
 			m_animationController.PlayByType(ANIMATION_TYPE.MOVE);
 		}
 		else if(m_animationController.currentAnimation.type == ANIMATION_TYPE.MOVE && Mathf.Approximately(m_axisX, 0.0f))
 		{
 			m_animationController.PlayByType(ANIMATION_TYPE.IDLE);
+
+			m_audioSource.loop = false;
+			m_audioSource.Stop();
 		}
 	}
 
-	private void OnCollisionEnter2D (Collision2D other)
+	private void PlayAudioMove ()
 	{
-		if(Physics2D.OverlapCircle(transform.localPosition, 0.1f, 1<<10) == other.collider)
-		{
-			m_canJump = true;
-
-			if(Mathf.Approximately(m_axisX, 0.0f))
-			{
-				m_animationController.PlayByType(ANIMATION_TYPE.IDLE);
-			}
-			else m_animationController.PlayByType(ANIMATION_TYPE.MOVE);
-		}
+		m_audioSource.Stop();
+		m_audioSource.loop = true;
+		m_audioSource.clip = m_sounds[0];
+		m_audioSource.Play();
 	}
 
 	private void OnCollisionStay2D (Collision2D other)
@@ -192,7 +218,22 @@ public class Character : MonoBehaviour
 		{
 			if(Physics2D.OverlapCircle(transform.localPosition, 0.1f, 1<<10) == other.collider)
 			{
+				m_audioSource.Stop();
+				m_audioSource.loop = false;
+				m_audioSource.clip = m_sounds[2];
+				m_audioSource.Play();
+
 				m_canJump = true;
+
+				if(Mathf.Approximately(m_axisX, 0.0f))
+				{
+					m_animationController.PlayByType(ANIMATION_TYPE.IDLE);
+				}
+				else
+				{
+					m_animationController.PlayByType(ANIMATION_TYPE.MOVE);
+					Invoke("PlayAudioMove", 0.1f);
+				}
 			}
 		}
 	}
@@ -210,7 +251,7 @@ public class Character : MonoBehaviour
 		if(other.gameObject.layer == 13)
 		{
 			Box b = other.GetComponent<Box>();
-			m_weapon.SetWeapon(b.weaponData);
+			Weapon.Instance.SetWeapon(b.weaponData);
 			b.Reset();
 		}
 	}

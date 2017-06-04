@@ -14,33 +14,46 @@ public class Enemy : MonoBehaviour
 	[System.Serializable]
 	public struct Data
 	{
+		public string name;
+
 		public int life;
+		public int points;
 
 		public float scale;
 		public float speed;
 
 		public AnimationData animationData;
-
-		public Vector2 facePoint;
-
-		public Vector2 colliderSize;
-		public Vector2 colliderOffset;
 	}
 
+	private Enemy.Data m_data;
+	public Enemy.Data data
+	{
+		get
+		{
+			return m_data;
+		}
+
+		set
+		{
+			m_data = value;
+		}
+	}
+
+	private bool m_dieBylevel = false;
 	private bool m_facingRight = true;
 
 	private ENEMY_STATE m_state = ENEMY_STATE.IDLE;
 
-	[SerializeField]
-	private BoxCollider2D m_collider = null;
+	private Vector3 direction { get { return m_facingRight ? Vector3.right : Vector3.left; } }
 
-	private Vector3 direction
-	{
-		get
-		{
-			return m_facingRight ? Vector3.right : Vector3.left;
-		}
-	}
+	[SerializeField]
+	private AudioClip[] m_sounds = null;
+
+	[SerializeField]
+	private AudioSource m_audioSource = null;
+
+	[SerializeField]
+	private Transform m_facePoint = null;
 
 	private Transform m_transform = null;
 	public new Transform transform
@@ -57,17 +70,12 @@ public class Enemy : MonoBehaviour
 	}
 
 	[SerializeField]
-	private Enemy.Data m_data;
-	public Enemy.Data data
+	private SpriteRendererAnimation m_animationController = null;
+	public SpriteRendererAnimation animationController
 	{
 		get
 		{
-			return m_data;
-		}
-
-		set
-		{
-			m_data = value;
+			return m_animationController;
 		}
 	}
 
@@ -78,24 +86,6 @@ public class Enemy : MonoBehaviour
 		get
 		{
 			return m_lifeManager;
-		}
-	}
-
-	[SerializeField]
-	private SpriteRendererAnimation m_animationController = null;
-	public SpriteRendererAnimation animationController
-	{
-		get
-		{
-			return m_animationController;
-		}
-	}
-	
-	private void Update ()
-    {
-		if(PauseManager.Instance.isPaused || !GameManager.Instance.hasStarted || GameManager.Instance.gameOver)
-		{
-			return;
 		}
 	}
 
@@ -116,16 +106,11 @@ public class Enemy : MonoBehaviour
 	{
 		data = newData;
 
+		m_dieBylevel = false;
+
 		transform.localScale = new Vector3(m_data.scale, m_data.scale, 1.0f);
 
 		m_animationController.animations = m_data.animationData.animationsList;
-
-		m_animationController.animations[0].genericType = ENEMY_STATE.IDLE;
-		m_animationController.animations[1].genericType = ENEMY_STATE.MOVE;
-		m_animationController.animations[2].genericType = ENEMY_STATE.DEATH;
-
-		m_collider.size = m_data.colliderSize;
-		m_collider.offset = m_data.colliderOffset;
 
 		m_lifeManager = new LifeManager(m_data.life);
 		m_lifeManager.Death += Death;
@@ -136,48 +121,101 @@ public class Enemy : MonoBehaviour
 		}
 
 		SetState(ENEMY_STATE.MOVE);
+
+		gameObject.SetActive(true);
 	}
 
-	private void SetState(ENEMY_STATE newState)
+	public void SetState(ENEMY_STATE newState)
 	{
 		m_state = newState;
 
-		m_animationController.PlayByGenericType(m_state);
+		ANIMATION_TYPE t = ANIMATION_TYPE.IDLE;
+
+		switch(m_state)
+		{
+			case ENEMY_STATE.DEATH:
+				t = ANIMATION_TYPE.JUMP;
+
+				m_audioSource.Stop();
+				m_audioSource.loop = false;
+				m_audioSource.clip = m_sounds[3];
+				m_audioSource.Play();
+				break;
+
+			case ENEMY_STATE.MOVE:
+				t = ANIMATION_TYPE.MOVE;
+				PlayAudioMove();
+				break;
+
+			default:
+				m_audioSource.Stop();
+				break;
+		}
+
+		m_animationController.PlayByType(t);
 	}
 
-	private void Flip ()
+	public void Flip ()
 	{
 		m_facingRight = !m_facingRight;
 
 		m_animationController.spriteRenderer.flipX = !m_facingRight;
+
+		m_facePoint.localPosition = new Vector3(m_facingRight ? 0.35f : -0.35f , m_facePoint.localPosition.y, 0.0f);
 	}
 
 	private void Death ()
 	{
+		gameObject.SetActive(false);
 
+		WaveManager.Instance.UpdateKilledEnemys();
+
+		if(m_dieBylevel)
+		{
+			return;
+		}
+
+		ScoreManager.Instance.AddPoints(m_data.points);
+	}
+
+	private void PlayAudioMove ()
+	{
+		m_audioSource.Stop();
+		m_audioSource.loop = true;
+		m_audioSource.clip = m_sounds[0];
+		m_audioSource.Play();
+	}
+
+	public void OnTriggerEnter2D (Collider2D other)
+	{
+		if(other.gameObject.layer == 12)
+		{
+			m_dieBylevel = true;
+			m_lifeManager.TakeDamage(1);
+		}
 	}
 
 	private void OnCollisionEnter2D (Collision2D other)
 	{
 		if(other.gameObject == Character.Instance.gameObject)
 		{
+			m_audioSource.Stop();
+			m_audioSource.loop = false;
+			m_audioSource.clip = m_sounds[2];
+			m_audioSource.Play();
+
 			Character.Instance.lifeManager.TakeDamage(1);
+
+			WaveManager.Instance.StopSpawn();
 		}
 		else
 		{
-			Vector2 facePoint = transform.localPosition;
-			facePoint.y += m_data.facePoint.y;
+			m_audioSource.Stop();
+			m_audioSource.loop = false;
+			m_audioSource.clip = m_sounds[1];
+			m_audioSource.Play();
 
-			if(!m_facingRight)
-			{
-				facePoint.x -= m_data.facePoint.x;
-			}
-			else facePoint.x += m_data.facePoint.x;
-
-			if(Physics2D.OverlapCircle(facePoint, 0.1f) != null)
-			{
-				Flip();
-			}
+			Invoke("PlayAudioMove", 0.1f);
 		}
 	}
 }

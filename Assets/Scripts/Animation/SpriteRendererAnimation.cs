@@ -4,7 +4,15 @@
 public class SpriteRendererAnimation : AnimationController
 {
 	private SpriteRenderer m_spriteRenderer = null;
-	public SpriteRenderer spriteRenderer { get { return m_spriteRenderer; } }
+	public SpriteRenderer spriteRenderer
+	{
+		get
+		{
+			SetSpriteRendererComponent();
+
+			return m_spriteRenderer;
+		}
+	}
 
 	private void Awake ()
 	{

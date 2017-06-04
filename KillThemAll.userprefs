@@ -1,9 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Mecanica\Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Mecanica\Bullet.cs">
     <Files>
-      <File FileName="Assets\Scripts\Mecanica\Enemy.cs" Line="178" Column="5" />
-      <File FileName="Assets\Scripts\Managers\WaveManager.cs" Line="5" Column="17" />
+      <File FileName="Assets\Scripts\Mecanica\Enemy.cs" Line="177" Column="1" />
+      <File FileName="Assets\Scripts\Mecanica\Character.cs" Line="54" Column="2" />
+      <File FileName="Assets\Scripts\Mecanica\Weapon.cs" Line="145" Column="5" />
+      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="5" Column="2" />
+      <File FileName="Assets\Scripts\Mecanica\Bullet.cs" Line="55" Column="49" />
+      <File FileName="Assets\Scripts\Managers\BoxSpawnManager.cs" Line="15" Column="2" />
+      <File FileName="Assets\Scripts\Managers\ScoreManager.cs" Line="42" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

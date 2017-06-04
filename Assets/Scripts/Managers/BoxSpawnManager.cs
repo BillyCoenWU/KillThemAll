@@ -23,6 +23,9 @@ public class BoxSpawnManager : MonoBehaviour
 	[SerializeField]
 	public Transform[] m_spawnPoints = null;
 
+	[SerializeField]
+	public AudioSource[] m_audioSource = null;
+
 	private static BoxSpawnManager s_instance = null;
 	public static BoxSpawnManager Instance
 	{
@@ -33,7 +36,12 @@ public class BoxSpawnManager : MonoBehaviour
 	}
 
 	private void Awake ()
-    {
+	{
+		if(s_instance != null)
+		{
+			DestroyImmediate(s_instance);
+		}
+
 		s_instance = this;
 	}
 
@@ -51,6 +59,7 @@ public class BoxSpawnManager : MonoBehaviour
 		yield return new WaitForSeconds(m_randomTime);
 
 		m_box.weaponData = m_weaponsData[m_tempIndex];
+		m_box.sound = m_audioSource[m_tempIndex];
 		m_box.transform.position = m_spawnPoints[Random.Range(0, m_spawnPoints.Length)].position;
 		m_box.gameObject.SetActive(true);
 

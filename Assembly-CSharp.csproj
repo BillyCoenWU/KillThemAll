@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Animation\AnimationController.cs" />
      <Compile Include="Assets\Scripts\Animation\AnimationData.cs" />
      <Compile Include="Assets\Scripts\Animation\SpriteRendererAnimation.cs" />
+     <Compile Include="Assets\Scripts\CollisionCheck.cs" />
      <Compile Include="Assets\Scripts\Interface\AlphaTextColor.cs" />
      <Compile Include="Assets\Scripts\Interface\ColorLerp.cs" />
      <Compile Include="Assets\Scripts\Interface\LooseMenu.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Managers\WaveManager.cs" />
      <Compile Include="Assets\Scripts\Mecanica\Box.cs" />
+     <Compile Include="Assets\Scripts\Mecanica\Bullet.cs" />
      <Compile Include="Assets\Scripts\Mecanica\Character.cs" />
      <Compile Include="Assets\Scripts\Mecanica\Enemy.cs" />
      <Compile Include="Assets\Scripts\Mecanica\Weapon.cs" />

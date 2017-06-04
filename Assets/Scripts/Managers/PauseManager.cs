@@ -2,6 +2,8 @@
 
 public class PauseManager : MonoBehaviour
 {
+	private AudioSource m_sound = null;
+
 	private static PauseManager s_instance = null;
 	public static PauseManager Instance
 	{
@@ -21,7 +23,15 @@ public class PauseManager : MonoBehaviour
 
 	private void Awake ()
 	{
+		if(s_instance != null)
+		{
+			DestroyImmediate(s_instance);
+		}
+
 		s_instance = this;
+
+		m_sound = GetComponent<AudioSource>();
+
 		gameObject.SetActive(false);
 	}
 
@@ -29,6 +39,7 @@ public class PauseManager : MonoBehaviour
 	{
 		Time.timeScale = 0.0f;
 		gameObject.SetActive(true);
+		m_sound.Play();
 	}
 
 	public void Resume ()
